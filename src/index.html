@@ -1,192 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="Silan He, Resume">
-    <title>I missed a bus</title>
-    <!-- Bootstrap Core CSS-->
-    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS-->
-    <link href="stylesheets/scrolling-nav.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
-    <!--if lt IE 9
-    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
-    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
-    -->
-  </head>
-  <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function-->
-  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-    <!-- Navigation-->
-    <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header page-scroll">
-          <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#page-top" class="navbar-brand page-scroll">I missed a bus</a>
+    <meta name="author" content="Silan He, Michel Ma, Edward Son, Li Zhang">
+
+    <title>STM Tracker</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">toggle navigation</span> menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">stm tracker</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#post">posts</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">about</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling-->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
-            <!--Hidden li included to remove active class from about link when scrolled up past about section-->
-            <li class="hidden"><a href="#page-top" class="page-scroll"></a></li>
-            <li><a href="#posts" class="page-scroll">Posts</a></li>
-            <li><a href="#about" class="page-scroll">About</a></li>
-            <li>
-              <button onclick="document.getElementById('id01').style.display='block'" class="btn-lg">login</button>
-            </li>
-            <li>
-              <button onclick="document.getElementById('id02').style.display='block'" class="btn-lg">register</button>
-            </li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse-->
-      </div>
-      <!-- /.container-->
+        <!-- /.container-fluid -->
     </nav>
-    <!-- Intro Section-->
-    <section id="intro" class="intro-section">
-      <div class="container"><br>
-        <h1>I missed a bus</h1>
-        <h6>A place for sad people who miss buses</h6>
-        <hr>
-        <button class="btn-lg btn-default">I just missed a bus</button>
-        <hr>
-      </div>
-    </section>
-    <!-- Posts Section-->
-    <section id="posts" class="posts-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h5>Posts</h5>
-            <hr>
-          </div>
-          <div class="col-md-4">
-            <div id="posts">
-            <script src="client.min.js"></script>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">crowd based stm data and trends</h1>
+                <hr>
+                <p>contribute to the public transport community by recording your busing experience</p>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">tell us what happened</span>
+                  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+                <br>
+                <a href="#post" class="btn btn-primary btn-xl page-scroll">record experience</a>
+                <hr>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">search trends</span>
+                  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+                <br>
+                <a href="#post" class="btn btn-primary btn-xl page-scroll">search trends</a>
             </div>
-          </div>
         </div>
-      </div>
+    </header>
+
+    <section class="no-padding" id="post">
+        <div class="container-fluid">
+            <div class="row no-gutter popup-gallery">
+                <div id="app"></div>
+                <script src="client.min.js"></script>
+            </div>
+        </div>
     </section>
-    <!-- About Section-->
-    <section id="about" class="success about-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2>About</h2>
-            <hr>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6"><img src="/images/missed.jpeg"></div>
-          <div class="col-lg-6">
-            <p>I missed a bus is a platform for sad people who missed a bus to find solace in their failure within the failure of others. All city-goers understand the pain.</p>
-            <p>Feel free to to document your missed bus by pressing the button above. Let us unite under the feeling of barely missing a bus.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Footer-->
-    <footer class="text-center">
-      <div class="footer-above">
+
+    <section class="bg-primary" id="about">
         <div class="container">
-          <div class="row">
-            <div class="footer-col col-md-4">
-              <h3>location</h3>
-              <p>Montreal,<br>earth</p>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">We've got what you need!</h2>
+                    <hr class="light">
+                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+                </div>
             </div>
-            <div class="footer-col col-md-4"><img src="/images/stm-logo.png"></div>
-            <div class="footer-col col-md-4">
-              <h3>About I missed a bus</h3>
-              <p>
-                I missed a bus is a montreal lifestyle
-                Web app created Li Zhang, Silan He and Michel Ma
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="footer-below">
+    </section>
+
+    <section id="services">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-12">copyright © imissedabus.tech 2016</div>
-          </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">At Your Service</h2>
+                    <hr class="primary">
+                </div>
+            </div>
         </div>
-      </div>
-    </footer>
-    <!-- Button to open the modal login form-->
-    <!-- The Modal-->
-    <div id="id01" class="modal"><span onclick="document.getElementById('id01').style.display='none'" title="Close Modal" class="close">×</span>
-      <!-- Modal Content-->
-      <form action="action_page.php" class="modal-content animate">
-        <div position="relative" class="imgcontainer">
-          <div class="row">
-            <input type="text" placeholder="Enter Username" name="uname" required="">
-          </div>
-          <div class="row">
-            <input type="password" placeholder="Enter Password" name="psw" required="">
-          </div>
-          <div class="row">
-            <button type="submit" class="login">Login</button>
-          </div>
-          <div class="row">
-            <input type="checkbox" checked="checked"> Remember me
-          </div>
-          <div class="row">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button><span class="psw">Forgot <a href="#">password?</a></span>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
+                        <h3>react and bootstrap frontend</h3>
+                        <p class="text-muted">sleek design</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
+                        <h3>lightning quick</h3>
+                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
+                        <h3>up to date</h3>
+                        <p class="text-muted">citigoers contribute constantly</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
+                        <h3>nuance api</h3>
+                        <p class="text-muted">using nuance api for a convenient user experience</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </form>
-    </div>
-    <div id="id02" class="modal"><span onclick="document.getElementById('id01').style.display='none'" title="Close Modal" class="close">×</span>
-      <!-- Modal Content-->
-      <form action="action_page.php" class="modal-content animate">
-        <div position="relative" class="imgcontainer">
-          <div class="row">
-            <input type="text" placeholder="Enter Username" name="uname" required="">
-          </div>
-          <div class="row">
-            <input type="password" placeholder="Enter Password" name="psw" required="">
-          </div>
-          <div class="row">
-            <button type="submit" class="login">Register</button>
-          </div>
-          <div class="row">
-            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-          </div>
+    </section>
+
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2>the team</h2>
+                <a href="#contact" class="page-scroll btn btn-default btn-xl sr-button">check out the hack team</a>
+            </div>
         </div>
-      </form>
-    </div>
-    <script>
-      // Get the modal
-      var modal = document.getElementById('id01');
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-      if (event.target == modal) {
-      modal.style.display = "none";
-      }
-      }
-    </script>
-    <script>
-      // Get the modal
-      var modal = document.getElementById('id02');
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-      if (event.target == modal) {
-      modal.style.display = "none";
-      }
-      }
-    </script>
-    <!-- jQuery-->
-    <script src="javascripts/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript-->
-    <script src="javascripts/bootstrap.min.js"></script>
-    <!-- Scrolling Nav JavaScript-->
-    <script src="javascripts/jquery.easing.min.js"></script>
-    <script src="javascripts/scrolling-nav.js"></script>
-  </body>
+    </aside>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">let's get in touch!</h2>
+                    <hr class="primary">
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="photo"></i>
+                    <p>Name,photo</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-phone fa-3x sr-contact"></i>
+                    <p>438-395-9750</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <p><a href="mailto:silan.he@mail.mcgill.ca">silan.he@mail.mcgill.ca</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
+
+</body>
+
 </html>
