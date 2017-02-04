@@ -1,5 +1,6 @@
-# mchacks2017
+# Hackatown2017
 
-Educational sorting website
+tracking stm buses
 
-by Michel Ma, Li Zhang, Silan He
+
+by Michel Ma, Li Zhang, Edward Son, Silan He
