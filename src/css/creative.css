@@ -12,7 +12,7 @@ body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 hr {
-  border-color: #F05F40;
+  border-color: #7997a1;
   border-width: 3px;
   max-width: 50px;
 }
@@ -43,7 +43,7 @@ p {
   margin-bottom: 20px;
 }
 .bg-primary {
-  background-color: #F05F40;
+  background-color: #ADD8E6;
 }
 .bg-dark {
   background-color: #222222;
@@ -155,7 +155,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/header.jpg');
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bus.jpg');
   text-align: center;
   color: white;
 }
@@ -221,6 +221,7 @@ header .header-content .header-content-inner p {
   }
 }
 .service-box p {
+  color:#7997a1;
   margin-bottom: 0;
 }
 .portfolio-box {
@@ -337,7 +338,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: white;
-  background-color: #F05F40;
+  background-color: #ADD8E6;
   border-color: #F05F40;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -350,7 +351,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #ee4b28;
+  background-color: #e5e500;
   border-color: #ed431f;
 }
 .btn-primary:active,
