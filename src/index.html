@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="Silan He, Resume">
+    <title>I missed a bus</title>
+    <!-- Bootstrap Core CSS-->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS-->
+    <link href="stylesheets/scrolling-nav.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
+    <!--if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    -->
+  </head>
+  <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function-->
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation-->
+    <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#page-top" class="navbar-brand page-scroll">I missed a bus</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <!--Hidden li included to remove active class from about link when scrolled up past about section-->
+            <li class="hidden"><a href="#page-top" class="page-scroll"></a></li>
+            <li><a href="#posts" class="page-scroll">Posts</a></li>
+            <li><a href="#about" class="page-scroll">About</a></li>
+            <li>
+              <button onclick="document.getElementById('id01').style.display='block'" class="btn-lg">login</button>
+            </li>
+            <li>
+              <button onclick="document.getElementById('id02').style.display='block'" class="btn-lg">register</button>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse-->
+      </div>
+      <!-- /.container-->
+    </nav>
+    <!-- Intro Section-->
+    <section id="intro" class="intro-section">
+      <div class="container"><br>
+        <h1>I missed a bus</h1>
+        <h6>A place for sad people who miss buses</h6>
+        <hr>
+        <button class="btn-lg btn-default">I just missed a bus</button>
+        <hr>
+      </div>
+    </section>
+    <!-- Posts Section-->
+    <section id="posts" class="posts-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h5>Posts</h5>
+            <hr>
+          </div>
+          <div class="col-md-4">
+            <div id="posts">
+            <script src="client.min.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section-->
+    <section id="about" class="success about-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2>About</h2>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6"><img src="/images/missed.jpeg"></div>
+          <div class="col-lg-6">
+            <p>I missed a bus is a platform for sad people who missed a bus to find solace in their failure within the failure of others. All city-goers understand the pain.</p>
+            <p>Feel free to to document your missed bus by pressing the button above. Let us unite under the feeling of barely missing a bus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="text-center">
+      <div class="footer-above">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col col-md-4">
+              <h3>location</h3>
+              <p>Montreal,<br>earth</p>
+            </div>
+            <div class="footer-col col-md-4"><img src="/images/stm-logo.png"></div>
+            <div class="footer-col col-md-4">
+              <h3>About I missed a bus</h3>
+              <p>
+                I missed a bus is a montreal lifestyle
+                Web app created Li Zhang, Silan He and Michel Ma
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-below">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">copyright © imissedabus.tech 2016</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Button to open the modal login form-->
+    <!-- The Modal-->
+    <div id="id01" class="modal"><span onclick="document.getElementById('id01').style.display='none'" title="Close Modal" class="close">×</span>
+      <!-- Modal Content-->
+      <form action="action_page.php" class="modal-content animate">
+        <div position="relative" class="imgcontainer">
+          <div class="row">
+            <input type="text" placeholder="Enter Username" name="uname" required="">
+          </div>
+          <div class="row">
+            <input type="password" placeholder="Enter Password" name="psw" required="">
+          </div>
+          <div class="row">
+            <button type="submit" class="login">Login</button>
+          </div>
+          <div class="row">
+            <input type="checkbox" checked="checked"> Remember me
+          </div>
+          <div class="row">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button><span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="id02" class="modal"><span onclick="document.getElementById('id01').style.display='none'" title="Close Modal" class="close">×</span>
+      <!-- Modal Content-->
+      <form action="action_page.php" class="modal-content animate">
+        <div position="relative" class="imgcontainer">
+          <div class="row">
+            <input type="text" placeholder="Enter Username" name="uname" required="">
+          </div>
+          <div class="row">
+            <input type="password" placeholder="Enter Password" name="psw" required="">
+          </div>
+          <div class="row">
+            <button type="submit" class="login">Register</button>
+          </div>
+          <div class="row">
+            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+      if (event.target == modal) {
+      modal.style.display = "none";
+      }
+      }
+    </script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id02');
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+      if (event.target == modal) {
+      modal.style.display = "none";
+      }
+      }
+    </script>
+    <!-- jQuery-->
+    <script src="javascripts/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript-->
+    <script src="javascripts/bootstrap.min.js"></script>
+    <!-- Scrolling Nav JavaScript-->
+    <script src="javascripts/jquery.easing.min.js"></script>
+    <script src="javascripts/scrolling-nav.js"></script>
+  </body>
+</html>
