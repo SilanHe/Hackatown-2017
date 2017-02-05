@@ -37,6 +37,14 @@ h5,
 h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, strong, b { margin-bottom: 20px; }
+h1,h4 { font-weight: 700; margin-bottom: 10px;}
+h2,h3 { font-weight: 500;}
+h1 { font-size: 60px;}
+h2 { font-size: 30px;}
+h3 { font-size: 24px;}
+
 p {
   font-size: 16px;
   line-height: 1.5;
@@ -70,6 +78,11 @@ button {
   transition: all 0.35s;
 
 }
+
+ul{
+  list-style: none;
+}
+
 button:hover,
 button:focus,
 button.focus,
@@ -184,69 +197,7 @@ aside {
     color: #7997a1;
   }
 }
-header {
-  min-height: 100%;
-  position: relative;
-  width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  background-position: center;
-  background-color: #222222;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bus.jpg');
-  text-align: center;
-  color: white;
-}
-header .header-content {
-  position: relative;
-  text-align: center;
-  padding: 100px 15px 100px;
-  width: 100%;
-}
-header .header-content .header-content-inner h1 {
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 30px;
-}
-header .header-content .header-content-inner hr {
-  margin: 30px auto;
-}
-header .header-content .header-content-inner p {
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
-  margin-bottom: 50px;
-}
-@media (min-width: 768px) {
-  header {
-    min-height: 100%;
-  }
-  header .header-content {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    padding: 0 50px;
-  }
-  header .header-content .header-content-inner {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  header .header-content .header-content-inner h1 {
-    font-size: 50px;
-  }
-  header .header-content .header-content-inner p {
-    font-size: 18px;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+
 .section-heading {
   margin-top: 0;
 }
@@ -453,5 +404,19 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: #222222;
+}
+
+.intro-section {
+    color: white;
+    padding-left:3%;
+    padding-right:3%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    min-height: 100%;
+    text-align: center;
+    background-color: #7997a1;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bus.jpg');
+    background-size: cover;       /* For flexibility */
+    background-attachment: fixed;
 }
 

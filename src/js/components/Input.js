@@ -1,10 +1,9 @@
 import React from "react";
-
 import Post from "./Post";
 import Search from "./Search";
-import Notification from "./Notification";
 import Request from "superagent";
-import Notification1 from "./Notification1";
+import Data from "./Data";
+
 
 export default class Input extends React.Component {
 	constructor() {
@@ -20,9 +19,10 @@ export default class Input extends React.Component {
 	changePost(post){
 		this.setState({post});
 	}
-
 	changeSearch(search){
 		this.setState({search});
+	}
+	submitSearch(){
 		// Credentials
 		var URL = 'wss://ws.dev.nuance.com/?';
 
@@ -90,48 +90,10 @@ export default class Input extends React.Component {
 	                    	//console.log(rawNuanceData[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value);
 	                    	const URL = "http://localhost:3000/api/posts?busNumber="+busNumber;
 	                    	Request.get(URL).then((response) =>{
-	                    		console.log("busNumber");
 	                    		this.setState({buses: response.body});
 	                    		this.setState({lateness: lateness});
 	                    	});
-	                    	/*const x = new Date();
-	                    	let busNumber="";
-	                    	let lateness ="";
-	                    	let location ="";
-	                    	console.log('starting deuces');
-	                    	try{
-	                    		busNumber = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value, null, 2)).replace(/\"/g,"");
-	                    	}catch(ex){
-	                    		busNumber = "null";
-	                    	}
-	                    	try{
-	                    		lateness = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_state[0].literal, null, 2)).replace(/\"/g,"");
-	                    	}catch(ex){
-	                    		lateness = "null";
-	                    	}
-	                    	try{
-	                    		location = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_stop[0].literal, null, 2)).replace(/\"/g,"");
-	                    	}catch(ex){
-	                    		location = "null";
-	                    	}
-	                    	console.log(busNumber);
-	                    	console.log(lateness);
-	                    	console.log(location);
 	                    	
-	                    	
-
-							Request.post('http://localhost:3000/api/posts')
-							    .send({
-							    	busNumber: busNumber,
-								    lateness: lateness,
-									location: location,
-								    currentTime: x,
-								  })
-							    .end()	
-							console.log("interpretations = " + JSON.stringify(msg.nlu_interpretation_results.payload.interpretations, null, 2));
-	                        console.log("interpretations = " + JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value, null, 2));
-	                        console.log("interpretations = " + JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_state[0].literal, null, 2));
-	                        console.log("interpretations = " + JSON.stringify(msg.nlu_interpretation_results.payload.interpretations, null, 2));	*/	
 	                    }catch(ex){
 	                        //dLog(JSON.stringify(msg, null, 2), $nluDebug, true);
 	                    }
@@ -297,6 +259,7 @@ export default class Input extends React.Component {
 		}else{
 			answer = "Late percent: " + latePercent + " Early percent: " + earlyPercent + " On Time Percent: " + onTimePercent;
 		};
+		console.log(this.state.buses);
 		return (
 			<div>
 				<h2>tell us what happened to your bus</h2>
@@ -305,7 +268,12 @@ export default class Input extends React.Component {
 				<button onClick={this.submitPost.bind(this)}>post</button>
 				<h2>search your bus</h2>
 				<Search changeSearch={this.changeSearch.bind(this)}/>
+				<br/>
+				<button onClick={this.submitSearch.bind(this)}>search</button>
+				<hr/>
 				<h3>{answer}</h3>
+				<Data busData={this.state.buses}/>
+				
 			</div>
 		);
 	}
