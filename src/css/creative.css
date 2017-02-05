@@ -41,14 +41,44 @@ p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 input {
   color:#000000;
+  min-width: 60%;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 20px;
+  font-weight:600;
+  border: 3px solid;
+  border-radius: 10px;
 }
 
 button {
-  color:#000000;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 20px;
+  font-weight:700;
   background-color:#ADD8E6;
+  color: #222222;
+  min-width: 20%;
+  min-height:50px;
+  border: 3px solid;
+  border-radius: 25px;
+  background-color: white;
+  border-color: white;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+
+}
+button:hover,
+button:focus,
+button.focus,
+button:active,
+button.active,
+.open > .dropdown-toggle.button {
+  color: #222222;
+  background-color: #7997a1;
+  border-color: #7997a1;
 }
 .bg-primary {
   background-color: #ADD8E6;
@@ -155,14 +185,15 @@ aside {
   }
 }
 header {
+  min-height: 100%;
   position: relative;
   width: 100%;
-  min-height: auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
+  background-color: #222222;
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bus.jpg');
   text-align: center;
   color: white;
@@ -311,8 +342,8 @@ header .header-content .header-content-inner p {
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   color: #222222;
-  background-color: #e5e500;
-  border-color: #ededed;
+  background-color: #7997a1;
+  border-color: #7997a1;
 }
 .btn-default:active,
 .btn-default.active,
@@ -423,3 +454,4 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+
