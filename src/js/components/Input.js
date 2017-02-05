@@ -19,8 +19,10 @@ export default class Input extends React.Component {
 	changePost(post){
 		this.setState({post});
 	}
-
 	changeSearch(search){
+		this.setState({search});
+	}
+	submitSearch(){
 		this.setState({search});
 		// Credentials
 		let busNumber ="";
@@ -266,8 +268,12 @@ export default class Input extends React.Component {
 				<button onClick={this.submitPost.bind(this)}>post</button>
 				<h2>search your bus</h2>
 				<Search changeSearch={this.changeSearch.bind(this)}/>
+				<br/>
+				<button onClick={this.submitSearch.bind(this)}>search</button>
+				<hr/>
 				<h3>{answer}</h3>
 				<Data busData={this.state.buses}/>
+				
 			</div>
 		);
 	}
