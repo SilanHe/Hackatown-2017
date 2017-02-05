@@ -24,14 +24,12 @@ export default class Input extends React.Component {
 	changeSearch(search){
 		this.setState({search});
 		// Credentials
-		let busNumber ="";
-		let lateness = "";
 		var URL = 'wss://ws.dev.nuance.com/?';
 
-		var APP_ID = "NMDPTRIAL_li_zhang17_mail_mcgill_ca20170204114956";
-		var APP_KEY = "d036b815c2945b9352120bd25c35c930e96049c5484818b044aa15946bff113b36c950f85dac8bafbe96821acb4b4bb5ac947af4dc93a4213db9b5a8b8c6e4ee";
+		var APP_ID = "NMDPTRIAL_edward_son_mail_mcgill_ca20170204112802";
+		var APP_KEY = "b5b099c726b12208281b8fcb37805ec424e80850908154a202d5226971599a260933ed2fe40f370c2ac7d7614736266c1e2ebcaeaf1050b1e6721b57cbb57dd4";
 		var USER_ID = "";
-		var NLU_TAG = "M5160_A2424";
+		var NLU_TAG = "M5195_A2421";
 
 		// ASR
 		// See: https://developer.nuance.com/public/index.php?task=supportedLanguages
@@ -41,6 +39,7 @@ export default class Input extends React.Component {
 		// See: https://developer.nuance.com/public/index.php?task=supportedLanguages
 		var TTS_LANGUAGE = "eng-USA";
 		var TTS_VOICE = "";
+
 
 
 		var defaultOptions = {
@@ -72,6 +71,8 @@ export default class Input extends React.Component {
 	            } else if (msg.result_type === "NDSP_APP_CMD") {
 	                if(msg.result_format === "nlu_interpretation_results") {
 	                    try{
+	                    	let lateness;
+	                    	let busNumber;
 	                    	try{
 	                    		busNumber = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value, null, 2)).replace(/\"/g,"");
 	                    	}catch(ex){
@@ -89,7 +90,7 @@ export default class Input extends React.Component {
 	                    	//console.log(rawNuanceData[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value);
 	                    	const URL = "http://localhost:3000/api/posts?busNumber="+busNumber;
 	                    	Request.get(URL).then((response) =>{
-	                    		console.log(busNumber);
+	                    		console.log("busNumber");
 	                    		this.setState({buses: response.body});
 	                    		this.setState({lateness: lateness});
 	                    	});
@@ -162,10 +163,10 @@ export default class Input extends React.Component {
 
 		var URL = 'wss://ws.dev.nuance.com/?';
 
-		var APP_ID = "NMDPTRIAL_li_zhang17_mail_mcgill_ca20170204114956";
-		var APP_KEY = "d036b815c2945b9352120bd25c35c930e96049c5484818b044aa15946bff113b36c950f85dac8bafbe96821acb4b4bb5ac947af4dc93a4213db9b5a8b8c6e4ee";
+		var APP_ID = "NMDPTRIAL_edward_son_mail_mcgill_ca20170204112802";
+		var APP_KEY = "b5b099c726b12208281b8fcb37805ec424e80850908154a202d5226971599a260933ed2fe40f370c2ac7d7614736266c1e2ebcaeaf1050b1e6721b57cbb57dd4";
 		var USER_ID = "";
-		var NLU_TAG = "M5160_A2424";
+		var NLU_TAG = "M5195_A2421";
 
 		// ASR
 		// See: https://developer.nuance.com/public/index.php?task=supportedLanguages
@@ -175,7 +176,7 @@ export default class Input extends React.Component {
 		// See: https://developer.nuance.com/public/index.php?task=supportedLanguages
 		var TTS_LANGUAGE = "eng-USA";
 		var TTS_VOICE = "";
-
+			
 
 		var defaultOptions = {
 	        onopen: function() {
