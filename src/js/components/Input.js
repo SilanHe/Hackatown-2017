@@ -74,7 +74,11 @@ export default class Input extends React.Component {
 	                    	try{
 	                    		busNumber = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value, null, 2)).replace(/\"/g,"");
 	                    	}catch(ex){
-	                    		busNumber = "null";
+	                    		try{
+	                    			busNumber = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.nuance_CARDINAL_NUMBER[0].value, null, 2)).replace(/\"/g,"");
+	                    		}catch(ex){
+	                    			busNumber = "null";
+	                    		}
 	                    	}
 	                    	try{
 	                    		lateness = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_state[0].value, null, 2)).replace(/\"/g,"");
@@ -84,7 +88,6 @@ export default class Input extends React.Component {
 	                    	//console.log(rawNuanceData[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value);
 	                    	const URL = "http://localhost:3000/api/posts?busNumber="+busNumber;
 	                    	Request.get(URL).then((response) =>{
-	                    		console.log("AAAAAA" + busNumber);
 	                    		this.setState({buses: response.body});
 	                    		this.setState({lateness: lateness});
 	                    	});
@@ -166,7 +169,7 @@ export default class Input extends React.Component {
 	                    try{
 	                    	//const rawNuanceData = JSON.parse(msg.nlu_interpretation_results.payload.interpretations);
 	                    	//console.log(rawNuanceData[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value);
-	                    	const x = new Date();
+	                    	const dateString = (new Date()).toLocaleTimeString("en-us", options);
 	                    	let busNumber="";
 	                    	let lateness ="";
 	                    	let location ="";
@@ -194,10 +197,10 @@ export default class Input extends React.Component {
 							    	busNumber: busNumber,
 								    lateness: lateness,
 									location: location,
-								    currentTime: x,
+								    currentTime: dateString,
 								  })
 							    .end()	
-									
+							alert('Thank you for your input!');
 	                    }catch(ex){
 	                        //dLog(JSON.stringify(msg, null, 2), $nluDebug, true);
 	                    }
@@ -242,9 +245,9 @@ export default class Input extends React.Component {
 			}
 		}
 		const TOTALCOUNT = lateCount + earlyCount + onTimeCount;
-		const latePercent = lateCount/TOTALCOUNT;
-		const earlyPercent = earlyCount/TOTALCOUNT;
-		const onTimePercent = onTimeCount/TOTALCOUNT;
+		const latePercent = Math.round((lateCount/TOTALCOUNT)*100);
+		const earlyPercent = Math.round((earlyCount/TOTALCOUNT)*100);
+		const onTimePercent = Math.round((onTimeCount/TOTALCOUNT)*100);
 		if(this.state.lateness == 1){
 			answer = (earlyPercent > 0.5)? "Yeah, its usually early: " + earlyPercent : "I wouldn't say that: " + earlyPercent;
 		}else if(this.state.lateness == -1){
