@@ -12,6 +12,8 @@ export default class Input extends React.Component {
 		this.state= {
 			post: "tell us what happened to your bus",
 			search: "search",
+			buses: {},
+			answer: "",
 		};
 	}
 
@@ -53,7 +55,6 @@ export default class Input extends React.Component {
 	        },
 	        onresult: (msg) => {
 	          
-	            console.log(msg);
 	            if (msg.result_type === "NMDP_TTS_CMD" || msg.result_type === "NVC_TTS_CMD") {
 	                //dLog(JSON.stringify(msg, null, 2), $ttsDebug);
 	            } else if (msg.result_type === "NVC_ASR_CMD") {
@@ -77,7 +78,7 @@ export default class Input extends React.Component {
 	                    		busNumber = "null";
 	                    	}
 	                    	try{
-	                    		lateness = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_state[0].literal, null, 2)).replace(/\"/g,"");
+	                    		lateness = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_state[0].value, null, 2)).replace(/\"/g,"");
 	                    	}catch(ex){
 	                    		lateness = "null";
 	                    	}
@@ -213,7 +214,7 @@ export default class Input extends React.Component {
 	                    		busNumber = "null";
 	                    	}
 	                    	try{
-	                    		lateness = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_state[0].literal, null, 2)).replace(/\"/g,"");
+	                    		lateness = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_state[0].value, null, 2)).replace(/\"/g,"");
 	                    	}catch(ex){
 	                    		lateness = "null";
 	                    	}
@@ -260,6 +261,36 @@ export default class Input extends React.Component {
 	}
 
 	render() {
+
+		let answer;
+
+		const busData = this.state.buses;
+		let lateCount = 0;
+		let earlyCount = 0;
+		let onTimeCount = 0;
+		for(let i = 0; i < busData.length; i++){
+
+			if(busData[i].lateness == "-1"){
+				lateCount+=1;
+			}else if(busData[i].lateness == "1"){
+				earlyCount+=1;
+			}else if(busData[i].lateness == "0"){
+				onTimeCount+=1;
+			}
+		}
+		const TOTALCOUNT = lateCount + earlyCount + onTimeCount;
+		const latePercent = lateCount/TOTALCOUNT;
+		const earlyPercent = earlyCount/TOTALCOUNT;
+		const onTimePercent = onTimeCount/TOTALCOUNT;
+		if(this.state.lateness == 1){
+			answer = (earlyPercent > 0.5)? "Yeah, its usually early: " + earlyPercent : "I wouldn't say that: " + earlyPercent;
+		}else if(this.state.lateness == -1){
+			answer = (latePercent > 0.5)? "Yeah, its usually late: " + latePercent : "Nope, its not usually late: " + latePercent;
+		}else if(this.state.lateness == 0){
+			answer = (onTimePercent > 0.5)? "Yeah, its usually on time: " + onTimePercent : "Nope, don't trust this bus: " + onTimePercent;
+		}else{
+			answer = "Late percent: " + latePercent + " Early percent: " + earlyPercent + " On Time Percent: " + onTimePercent;
+		};
 		return (
 			<div>
 				<h2>tell us what happened to your bus</h2>
@@ -268,6 +299,7 @@ export default class Input extends React.Component {
 				<button onClick={this.submitPost.bind(this)}>post</button>
 				<h2>search your bus</h2>
 				<Search changeSearch={this.changeSearch.bind(this)}/>
+				<h3>{answer}</h3>
 			</div>
 		);
 	}
