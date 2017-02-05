@@ -169,8 +169,10 @@ export default class Input extends React.Component {
 	            } else if (msg.result_type === "NDSP_APP_CMD") {
 	                if(msg.result_format === "nlu_interpretation_results") {
 	                    try{
-	                    	//const rawNuanceData = JSON.parse(msg.nlu_interpretation_results.payload.interpretations);
-	                    	//console.log(rawNuanceData[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value);
+	                    	const options = {
+	                    		weekday: "long", year: "numeric", month: "short",
+	                    		day: "numeric", hour: "2-digit", minute: "2-digit"
+	                    	}
 	                    	const dateString = (new Date()).toLocaleTimeString("en-us", options);
 	                    	let busNumber="";
 	                    	let lateness ="";
@@ -251,11 +253,11 @@ export default class Input extends React.Component {
 		const earlyPercent = Math.round((earlyCount/TOTALCOUNT)*100);
 		const onTimePercent = Math.round((onTimeCount/TOTALCOUNT)*100);
 		if(this.state.lateness == 1){
-			answer = (earlyPercent > 0.5)? "Yeah, its usually early: " + earlyPercent : "I wouldn't say that: " + earlyPercent;
+			answer = (earlyPercent > 50)? "Yeah, its usually early: " + earlyPercent + "% early": "I wouldn't say that: " + earlyPercent +"% early";
 		}else if(this.state.lateness == -1){
-			answer = (latePercent > 0.5)? "Yeah, its usually late: " + latePercent : "Nope, its not usually late: " + latePercent;
+			answer = (latePercent > 50)? "Yeah, its usually late: " + latePercent + "% late": "Nope, its not usually late: " + latePercent +"% late";
 		}else if(this.state.lateness == 0){
-			answer = (onTimePercent > 0.5)? "Yeah, its usually on time: " + onTimePercent : "Nope, don't trust this bus: " + onTimePercent;
+			answer = (onTimePercent > 50)? "Yeah, its usually on time: " + onTimePercent + "% on time": "Nope, don't trust this bus: " + onTimePercent + "%on time";
 		}else{
 			answer = "Late percent: " + latePercent + " Early percent: " + earlyPercent + " On Time Percent: " + onTimePercent;
 		};
