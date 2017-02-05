@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="bd3bbc29-77c2-4e17-8445-a84c8292243a" name="Default" comment="" />
-=======
     <list default="true" id="bd3bbc29-77c2-4e17-8445-a84c8292243a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/creative.css" afterPath="$PROJECT_DIR$/src/css/creative.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
     </list>
->>>>>>> Stashed changes
     <ignored path="Hackatown-2017.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -30,19 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< Updated upstream
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2835">
               <caret line="189" column="45" selection-start-line="189" selection-start-column="45" selection-end-line="189" selection-end-column="45" />
-=======
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="193" column="49" selection-start-line="193" selection-start-column="49" selection-end-line="193" selection-end-column="49" />
->>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -86,7 +74,6 @@
           </provider>
         </entry>
       </file>
-<<<<<<< Updated upstream
       <file leaf-file-name="creative.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/css/creative.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -95,14 +82,6 @@
               <folding>
                 <marker date="1486256061000" expanded="true" signature="472:572" ph="{...}" />
               </folding>
-=======
-      <file leaf-file-name="creative.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/css/creative.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="342" column="16" selection-start-line="342" selection-start-column="16" selection-end-line="342" selection-end-column="16" />
-              <folding />
->>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -118,13 +97,8 @@
         <option value="$PROJECT_DIR$/rest/package.json" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/vendor/bootstrap/css/bootstrap.css" />
-<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/css/creative.css" />
-=======
-        <option value="$PROJECT_DIR$/src/css/creative.css" />
-        <option value="$PROJECT_DIR$/src/index.html" />
->>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -712,7 +686,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/css/creative.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2593">
@@ -727,20 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2835">
           <caret line="189" column="45" selection-start-line="189" selection-start-column="45" selection-end-line="189" selection-end-column="45" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="193" column="49" selection-start-line="193" selection-start-column="49" selection-end-line="193" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/creative.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="342" column="16" selection-start-line="342" selection-start-column="16" selection-end-line="342" selection-end-column="16" />
->>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
