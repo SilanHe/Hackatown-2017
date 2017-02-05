@@ -42,6 +42,9 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+input {
+  color:#000000;
+}
 .bg-primary {
   background-color: #ADD8E6;
 }
