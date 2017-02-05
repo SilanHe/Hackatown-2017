@@ -58,7 +58,6 @@ export default class Input extends React.Component {
 	        },
 	        onresult: function(msg) {
 	          
-	            console.log(msg);
 	            if (msg.result_type === "NMDP_TTS_CMD" || msg.result_type === "NVC_TTS_CMD") {
 	                //dLog(JSON.stringify(msg, null, 2), $ttsDebug);
 	            } else if (msg.result_type === "NVC_ASR_CMD") {
@@ -82,7 +81,7 @@ export default class Input extends React.Component {
 	                    	let busNumber="";
 	                    	let lateness ="";
 	                    	let location ="";
-	                    	console.log('starting deuces');
+	                    	
 	                    	try{
 	                    		busNumber = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value, null, 2)).replace(/\"/g,"");
 	                    	}catch(ex){
@@ -98,9 +97,6 @@ export default class Input extends React.Component {
 	                    	}catch(ex){
 	                    		location = "null";
 	                    	}
-	                    	console.log(busNumber);
-	                    	console.log(lateness);
-	                    	console.log(location);
 	                    	
 	                    	
 
@@ -112,10 +108,7 @@ export default class Input extends React.Component {
 								    currentTime: x,
 								  })
 							    .end()	
-							console.log("interpretations = " + JSON.stringify(msg.nlu_interpretation_results.payload.interpretations, null, 2));
-	                        console.log("interpretations = " + JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value, null, 2));
-	                        console.log("interpretations = " + JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_state[0].literal, null, 2));
-	                        console.log("interpretations = " + JSON.stringify(msg.nlu_interpretation_results.payload.interpretations, null, 2));		
+									
 	                    }catch(ex){
 	                        //dLog(JSON.stringify(msg, null, 2), $nluDebug, true);
 	                    }
