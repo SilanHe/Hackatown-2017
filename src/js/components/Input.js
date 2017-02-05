@@ -81,7 +81,7 @@ export default class Input extends React.Component {
 	                    	let busNumber="";
 	                    	let lateness ="";
 	                    	let location ="";
-	                    	
+
 	                    	try{
 	                    		busNumber = (JSON.stringify(msg.nlu_interpretation_results.payload.interpretations[0].concepts.bus_number[0].concepts.nuance_CARDINAL_NUMBER[0].value, null, 2)).replace(/\"/g,"");
 	                    	}catch(ex){
@@ -137,10 +137,11 @@ export default class Input extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>tell us what happened to your bus</h1>
+				<h2>tell us what happened to your bus</h2>
 				<Post changePost={this.changePost.bind(this)}/>
+				<br/>
 				<button onClick={this.submitPost.bind(this)}>post</button>
-				<h1>search your bus</h1>
+				<h2>search your bus</h2>
 				<Search changeSearch={this.changeSearch.bind(this)}/>
 			</div>
 		);
