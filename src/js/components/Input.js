@@ -32,7 +32,7 @@ export default class Input extends React.Component {
 				<h1>tell us what happened to your bus</h1>
 				<Notification post={this.state.post}/>
 				<Post changePost={this.changePost.bind(this)}/>
-				<button onClick={this.submitPost.bind(this)}/>
+				<button onClick={this.submitPost.bind(this)}>post</button>
 				<h1>search your bus</h1>
 				<Notification1 search={this.state.search}/>
 				<Search changeSearch={this.changeSearch.bind(this)}/>

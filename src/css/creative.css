@@ -45,6 +45,11 @@ p {
 input {
   color:#000000;
 }
+
+button {
+  color:#000000;
+  background-color:#ADD8E6;
+}
 .bg-primary {
   background-color: #ADD8E6;
 }
