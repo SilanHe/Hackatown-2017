@@ -1,10 +1,9 @@
 import React from "react";
-
 import Post from "./Post";
 import Search from "./Search";
-import Notification from "./Notification";
 import Request from "superagent";
-import Notification1 from "./Notification1";
+import Data from "./Data";
+
 
 export default class Input extends React.Component {
 	constructor() {
@@ -143,6 +142,7 @@ export default class Input extends React.Component {
 				<button onClick={this.submitPost.bind(this)}>post</button>
 				<h2>search your bus</h2>
 				<Search changeSearch={this.changeSearch.bind(this)}/>
+				<Data busData={this.state.buses}/>
 			</div>
 		);
 	}

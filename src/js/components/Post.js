@@ -10,7 +10,7 @@ export default class Post extends React.Component {
 	render() {
 		return (
 			<div>
-				<input placeholder=" try 'the 470 is on time'" type="text" onChange={this.handlePost.bind(this)}/>
+				<input placeholder=" try 'the 470 is early'" type="text" onChange={this.handlePost.bind(this)}/>
 				<br/>
 			</div>
 		);
