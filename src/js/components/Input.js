@@ -22,12 +22,17 @@ export default class Input extends React.Component {
 		this.setState({search});
 	}
 
+	submitPost(){
+		//fadsflkdagl
+	}
+
 	render() {
 		return (
 			<div>
-				<h1>tellus what happened to your bus</h1>
+				<h1>tell us what happened to your bus</h1>
 				<Notification post={this.state.post}/>
 				<Post changePost={this.changePost.bind(this)}/>
+				<button onClick={this.submitPost.bind(this)}/>
 				<h1>search your bus</h1>
 				<Notification1 search={this.state.search}/>
 				<Search changeSearch={this.changeSearch.bind(this)}/>
