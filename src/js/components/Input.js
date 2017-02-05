@@ -23,7 +23,6 @@ export default class Input extends React.Component {
 		this.setState({search});
 	}
 	submitSearch(){
-		this.setState({search});
 		// Credentials
 		let busNumber ="";
 		let lateness = "";
